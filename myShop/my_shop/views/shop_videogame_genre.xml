@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='shop_videogame_genre_action' model='ir.actions.act_window'>
+        <field name="name">Videogame Genre</field>
+        <field name="res_model">shop.videogame.genre</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Videogame Genre" id="shop_videogame_genre_menu" parent="shop_base_menu" action="shop_videogame_genre_action"/>
+
+    <!-- Form View -->
+    <record id="shop_videogame_genre_view_form" model="ir.ui.view">
+        <field name="name">Videogame Genre Form</field>
+        <field name="model">shop.videogame.genre</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                    <group>
+                        <field name="parent_id"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="child_ids"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="shop_videogame_genre_view_tree" model="ir.ui.view">
+        <field name="name">Shop Videogame List</field>
+        <field name="model">shop.videogame.genre</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

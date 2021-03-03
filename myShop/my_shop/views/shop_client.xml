@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>   
+
+    <!-- Form View -->
+    <record id="shop_client_view_form" model="ir.ui.view">
+        <field name="name">Shop Client Form</field>
+        <field name="model">shop.client</field>
+        <field name="arch" type="xml">
+            <form>                
+                <group>
+                    <group>
+                        <field name="partner_id"/>
+                    </group>
+                    <group>        
+                        <field name="client_number"/>               
+                        <field name="date_start"/>
+                        <field name="date_end"/> 
+                        <field name="date_of_birth"/>                        
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="shop_client_view_tree" model="ir.ui.view">
+        <field name="name">Shop Client List</field>
+        <field name="model">shop.client</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id"/>
+                <field name="client_number"/>
+                <field name="date_of_birth"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

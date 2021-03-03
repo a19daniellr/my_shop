@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acl_videogame,shop.videogame_default,model_shop_videogame,,1,0,0,0
+acl_videogame_gamer,shop.videogame_gamer,model_shop_videogame,group_gamer,1,1,1,1
+acl_videogame_genre,shop.videogame_genre_default,model_shop_videogame_genre,,1,0,0,0
+acl_videogame_genre_gamer,shop.videogame_genre_gamer,model_shop_videogame_genre,group_gamer,1,1,1,1
+acl_loan,shop.loan_default,model_shop_loan,,1,0,0,0
+acl_loan_gamer,shop.loan_gamer,model_shop_loan,group_gamer,1,1,1,1
+acl_client,shop.client_default,model_shop_client,,1,0,0,0
+acl_client_gamer,shop.client_gamer,model_shop_client,group_gamer,1,1,1,1
+acl_videogame_creator,shop.videogame_creator_default,model_shop_videogame_creator,,1,0,0,0
+acl_videogame_creator_gamer,shop.videogame_creator_gamer,model_shop_videogame_creator,group_gamer,1,1,1,1

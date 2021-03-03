@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='shop_loan_action' model='ir.actions.act_window'>
+        <field name="name">Shop Loans</field>
+        <field name="res_model">shop.loan</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Shop Loans" id="shop_loan_menu" parent="shop_base_menu" action="shop_loan_action"/>
+
+    <!-- Form View -->
+    <record id="shop_loan_view_form" model="ir.ui.view">
+        <field name="name">Shop Loan Form</field>
+        <field name="model">shop.loan</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>                    
+                    <button name="find_loan" string="Find Loan" type="object"/>                    
+                </header>
+                <group>
+                    <group>
+                        <field name="videogame_id"/>
+                        <field name="client_id"/>                              
+                    </group>
+                    <field name="client_image" widget="image" class="oe_avatar"/>
+                    <group>                        
+                        <field name="date_start"/>
+                        <field name="date_end"/>                                              
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="shop_loan_view_tree" model="ir.ui.view">
+        <field name="name">Shop Loan List</field>
+        <field name="model">shop.loan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="client_id"/>
+                <field name="videogame_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

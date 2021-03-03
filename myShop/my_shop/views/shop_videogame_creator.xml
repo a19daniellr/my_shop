@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>   
+
+    <record id='shop_videogame_creator_action' model='ir.actions.act_window'>
+        <field name="name">Videogame Creator</field>
+        <field name="res_model">shop.videogame.creator</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Videogame Creator" id="shop_videogame_creator_menu" parent="shop_base_menu" action="shop_videogame_creator_action"/>
+
+    <!-- Form View -->
+    <record id="shop_videogame_creator_view_form" model="ir.ui.view">
+        <field name="name">Videogame creator Form</field>
+        <field name="model">shop.videogame.creator</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="country"/>
+                    <field name="date_born"/>
+                    <field name="date_dead"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="shop_videogame_creator_view_tree" model="ir.ui.view">
+        <field name="name">Shop Videogame List</field>
+        <field name="model">shop.videogame.creator</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="country"/>
+                <field name="date_born"/>
+                <field name="date_dead"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

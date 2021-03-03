@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='shop_videogame_action' model='ir.actions.act_window'>
+        <field name="name">Shop Videogames</field>
+        <field name="res_model">shop.videogame</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem name="My Shop" id="shop_base_menu" />
+    <menuitem name="Videogames" id="shop_videogames_menu" parent="shop_base_menu" action="shop_videogame_action"/>
+
+    <!-- Form View -->
+    <record id="shop_videogame_view_form" model="ir.ui.view">
+        <field name="name">Shop Videogame Form</field>
+        <field name="model">shop.videogame</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="make_available" string="Make Available" type="object"/>
+                    <button name="make_borrowed"  string="Make Borrowed" type="object"/>
+                    <button name="make_draft"  string="Make Unavailable" type="object"/>
+                    <button name="change_update_date" string="Update Date" type="object"/>
+                    <button name="find_videogame" string="Find Videogame" type="object"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <group>
+                    <group>
+                        <field name="name" onChange="onchange_field_name()"/>
+                        <field name="videogame_image" widget="image" class="oe_avatar"/>
+                        <field name="creators_id" widget="many2one_tags"/>
+                    </group>
+                    <group>
+                        <field name="genre_id"/>
+                        <field name="date_release"/>
+                        <field name="date_updated"/>
+                        <field name="is_lent"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="loan_ids"/> 
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- KANBAN VIEW -->
+    <record id="kanban_tasks" model="ir.ui.view">
+        <field name="name">shop.videogame.name</field>
+        <field name="model">shop.videogame</field>
+        <field name="sequence">20</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="videogame_image" />
+                <field name="name" />
+                <field name="date_release" />
+                <field name="creators_id" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <field name="videogame_image" widget="image"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <span>Video Game: </span><h4><field name="name"/></h4>
+                                </strong>
+                                <div t-if="record.date_release.value">
+                                    <span>Release Date: </span><t t-esc="record.date_release.value"/>
+                                </div>
+                                <div t-if="record.creators_id.value">
+                                    <span>Creator: </span><t t-esc="record.creators_id.value"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id='action_my_tasks' model='ir.actions.act_window'>
+        <field name="name">My tasks</field>
+        <field name="res_model">shop.videogame</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'kanban_view_ref': 'shop.videogame'}</field>
+    </record>
+
+
+    <!-- Tree(list) View -->
+    <record id="shop_videogame_view_tree" model="ir.ui.view">
+        <field name="name">Shop Videogame List</field>
+        <field name="model">shop.videogame</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date_release"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="shop_videogame_view_search" model="ir.ui.view">
+        <field name="name">Shop Videogame Search</field>
+        <field name="model">shop.videogame</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="creators_id"/>
+                <filter string="Without Creators" name="without_creator" domain="[('creators_id','=',False)]"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>
