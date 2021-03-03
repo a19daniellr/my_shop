@@ -8,7 +8,7 @@ El módulo consiste en poder controlar los movimientos de los videojuegos que se
 
 ### KANBAN
 
-Dispone de una vista kanban sin grupos, es decir, sin poder desplazar los videojuegos a etapas de vida. Los grupos se pueden utilizar para en un futuro ordenar los libros de forma que si compras uno por internet lo puedas mover en varias situaciones (**interesado**, **solicitado**, **en camino**, **retraso**,**tienda**). Ahora mismo está implementado para una mejor visualización de los productos.
+Dispone de una vista kanban sin grupos, es decir, sin poder desplazar los videojuegos a etapas de vida. Los grupos se pueden utilizar para en un futuro ordenarlos de forma que si compras uno por internet lo puedas mover en varias situaciones (**interesado**, **solicitado**, **en camino**, **retraso**,**tienda**). Ahora mismo está implementado para una mejor visualización de los productos.
 
 ### VALORES POR DEFECTO
 
