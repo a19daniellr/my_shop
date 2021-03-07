@@ -1,7 +1,7 @@
 # My Shop
 
-## Módulo de Odoo para gestionar una empresa de videojuegos.
-
+## Módulo de Odoo para gestionar una tienda de videojuegos.
+***
 ### RESUMEN
 
 El módulo consiste en poder controlar los movimientos de los videojuegos que se presten y saber en cada momento si están prestados o no. Además controla el proceso el cual no deja prestar un videojuego en caso de que no estea disponible o esté prestado ya en ese momento.
