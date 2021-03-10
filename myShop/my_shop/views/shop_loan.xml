@@ -4,10 +4,22 @@
         <field name="name">Shop Loans</field>
         <field name="res_model">shop.loan</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">calendar,tree,form</field>
     </record>
 
     <menuitem name="Shop Loans" id="shop_loan_menu" parent="shop_base_menu" action="shop_loan_action"/>
+
+    <!--Calendar View-->
+    <record id="mobile_service_view_calendar" model="ir.ui.view">
+        <field name="name">shop.loan.calendar</field>
+        <field name="model">shop.loan</field>
+        <field name="arch" type="xml">
+            <calendar string="Service Request" date_start="date_start" date_stop="date_end" event_open_popup="true" color="client_id" mode="month" quick_add="False">
+                <field name="client_id"/>
+                <field name="videogame_id"/>
+            </calendar>
+        </field>
+    </record>
 
     <!-- Form View -->
     <record id="shop_loan_view_form" model="ir.ui.view">
