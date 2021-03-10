@@ -23,4 +23,8 @@ Se utiliza la herencia con *res.partner*. Es decir se utilizan Socios para la cr
 Se utilizan fields **data** para el manejo de fechas y **relacionales** para el control de los creadores de un videojuegos (por ejemplo).
 ***
 #### AMPLIACIONES FUTURAS Y DEMÁS
-Como ya hemos mencionado anteriormente se pretende utilizar un kanban para poder **ordenar los videojuegos** según su estado. Además también se podría utilizar una vista calendar para poder **gestionar mejor el tiempo** teniendo en cuenta la entrega de los mismos, etc. Se tendría que mejorar el apartado de prestamo de videojuegos para poder **venderlos** y además añadir un **stock** y **precios** de los mismos.
+Como ya hemos mencionado anteriormente se pretende utilizar un kanban para poder **ordenar los videojuegos** según su estado. Se tendría que mejorar el apartado de prestamo de videojuegos para poder **venderlos** y además añadir un **stock** y **precios** de los mismos. Si se añade un préstamo al libro automaticamente se pone el nombre del libro prestado al préstamo, pudiendo cambiarlo.
+***
+#### VISTA CALENDAR AÑADIDA
+Se ha añadido una vista Calendar para los préstamos de los videojuegos.
+
