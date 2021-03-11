@@ -52,9 +52,6 @@
         <field name="sequence">20</field>
         <field name="arch" type="xml">
             <kanban default_group_by="state" class="o_kanban_small_column">
-                <progressbar
-                    field="state" 
-                    colors='{"draft": "danger", "borrowed": "borrowed", "available": "success"}' />
                 <field name="videogame_image" />
                 <field name="name" />
                 <field name="date_release" />
